@@ -1097,14 +1097,14 @@ function(setup_arduino_target TARGET_NAME BOARD_ID ALL_SRCS ALL_LIBS COMPILE_FLA
                         VERBATIM)
 
     # Display target size
-    add_custom_command(TARGET ${TARGET_NAME} POST_BUILD
-                        COMMAND ${CMAKE_COMMAND}
-                        ARGS    -DFIRMWARE_IMAGE=${TARGET_PATH}.elf
-                                -DMCU=${${BOARD_ID}.build.mcu}
-                                -DEEPROM_IMAGE=${TARGET_PATH}.eep
-                                -P ${ARDUINO_SIZE_SCRIPT}
-                        COMMENT "Calculating image size"
-                        VERBATIM)
+    #add_custom_command(TARGET ${TARGET_NAME} POST_BUILD
+    #                    COMMAND ${CMAKE_COMMAND}
+    #                    ARGS    -DFIRMWARE_IMAGE=${TARGET_PATH}.elf
+    #                            -DMCU=${${BOARD_ID}.build.mcu}
+    #                            -DEEPROM_IMAGE=${TARGET_PATH}.eep
+    #                            -P ${ARDUINO_SIZE_SCRIPT}
+    #                    COMMENT "Calculating image size"
+    #                    VERBATIM)
 
     # Create ${TARGET_NAME}-size target
     add_custom_target(${TARGET_NAME}-size
